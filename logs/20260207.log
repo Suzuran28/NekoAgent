@@ -1,0 +1,51 @@
+2026-02-07 14:07:22,206 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 14:11:11,034 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 14:11:11,035 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 14:13:51,509 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 14:13:51,510 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 14:13:51,527 - Agent - DEBUG - agent.py:32 - content='你好啊~' additional_kwargs={} response_metadata={} id='5e990d06-570c-4744-87a7-9845a70f094f'
+2026-02-07 14:14:07,516 - Agent - DEBUG - agent.py:32 - content='主人，你好呀喵~(◕‿◕✿)今天想和主人玩什么呀喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T06:14:07.5152704Z', 'done': True, 'done_reason': 'stop', 'total_duration': 15977175600, 'load_duration': 82878900, 'prompt_eval_count': 568, 'prompt_eval_duration': 269955500, 'eval_count': 1227, 'eval_duration': 15145684300, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c36bc-3b2a-7343-95f4-1b333bd2d2fb-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 568, 'output_tokens': 1227, 'total_tokens': 1795}
+2026-02-07 15:34:43,694 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 15:34:43,694 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 15:35:10,311 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 15:35:10,312 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 15:35:14,468 - Agent - DEBUG - agent.py:35 - content='现在几点了' additional_kwargs={} response_metadata={} id='f8ba2a82-6359-44ec-bd9d-a85ef91d4386'
+2026-02-07 15:36:23,238 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 15:36:23,239 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 15:36:26,267 - Agent - DEBUG - agent.py:35 - content='现在几点了' additional_kwargs={} response_metadata={} id='ea8ea064-3cc1-4baa-b61b-0d6645922123'
+2026-02-07 15:38:01,871 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 15:38:01,871 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 15:38:07,271 - Agent - DEBUG - agent.py:35 - content='现在几点了?' additional_kwargs={} response_metadata={} id='3e563c10-234c-4bd5-8814-e6bf924b0b2d'
+2026-02-07 15:38:43,924 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 15:38:43,924 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 15:38:48,545 - Agent - DEBUG - agent.py:35 - content='现在几点了?' additional_kwargs={} response_metadata={} id='84516a48-0dea-40e8-9add-e99bead8d930'
+2026-02-07 15:38:48,545 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 15:38:48,546 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 现在几点了?
+2026-02-07 15:38:54,185 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T07:38:54.1826688Z', 'done': True, 'done_reason': 'stop', 'total_duration': 5617957500, 'load_duration': 3010427400, 'prompt_eval_count': 737, 'prompt_eval_duration': 245629300, 'eval_count': 189, 'eval_duration': 2237618900, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c370a-016f-7b32-8012-7c5cdc1f9c93-0' tool_calls=[{'name': 'get_time', 'args': {}, 'id': '64539767-351b-460b-81f6-685facc2a333', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 737, 'output_tokens': 189, 'total_tokens': 926}
+2026-02-07 15:38:54,186 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: get_time
+2026-02-07 15:38:54,186 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {}
+2026-02-07 15:38:54,187 - Middleware - INFO - middleware.py:24 - [Tool] 工具 get_time 执行成功
+2026-02-07 15:38:54,188 - Agent - DEBUG - agent.py:35 - content='2026-02-07 15:38:54' name='get_time' id='aac3f7a7-12f0-4766-bafb-4b8628433c28' tool_call_id='64539767-351b-460b-81f6-685facc2a333'
+2026-02-07 15:38:54,188 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 15:38:54,188 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 2026-02-07 15:38:54
+2026-02-07 15:39:04,499 - Agent - DEBUG - agent.py:35 - content='主人，现在是3点38分喵~(๑•̀ㅂ•́)و✧' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T07:39:04.4979244Z', 'done': True, 'done_reason': 'stop', 'total_duration': 10300165400, 'load_duration': 120579900, 'prompt_eval_count': 785, 'prompt_eval_duration': 31652400, 'eval_count': 814, 'eval_duration': 9842179300, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c370a-1774-7a40-967e-a6fd0d405a04-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 785, 'output_tokens': 814, 'total_tokens': 1599}
+2026-02-07 15:58:06,392 - Tools - INFO - tools.py:39 - 成功获取天气信息
+2026-02-07 15:59:34,364 - Tools - INFO - tools.py:39 - 成功获取天气信息
+2026-02-07 16:17:24,923 - Tools - INFO - tools.py:39 - 成功获取天气信息
+2026-02-07 16:36:32,704 - Tools - INFO - tools.py:35 - 成功获取天气信息
+2026-02-07 16:43:26,299 - Tools - INFO - tools.py:50 - 成功获取天气信息
+2026-02-07 16:45:07,922 - Tools - INFO - tools.py:50 - 成功获取天气信息
+2026-02-07 16:48:45,876 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 16:48:45,877 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 16:48:52,154 - Agent - DEBUG - agent.py:35 - content='今天天气怎么样~' additional_kwargs={} response_metadata={} id='9bb60afe-f285-4dfc-b59f-8df057f5ed2c'
+2026-02-07 16:48:52,154 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 16:48:52,155 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 今天天气怎么样~
+2026-02-07 16:48:59,180 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T08:48:59.1778508Z', 'done': True, 'done_reason': 'stop', 'total_duration': 7002110800, 'load_duration': 3326741500, 'prompt_eval_count': 826, 'prompt_eval_duration': 281843000, 'eval_count': 265, 'eval_duration': 3224398800, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c374a-25cc-7311-98bf-d64e36c06ca3-0' tool_calls=[{'name': 'get_weather', 'args': {}, 'id': '783b6452-a78e-4d5b-8107-d9f88a008d1f', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 826, 'output_tokens': 265, 'total_tokens': 1091}
+2026-02-07 16:48:59,180 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: get_weather
+2026-02-07 16:48:59,180 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {}
+2026-02-07 16:49:00,391 - Tools - INFO - tools.py:50 - 成功获取天气信息
+2026-02-07 16:49:00,391 - Middleware - INFO - middleware.py:24 - [Tool] 工具 get_weather 执行成功
+2026-02-07 16:49:00,394 - Agent - DEBUG - agent.py:35 - content='中国 福建省 厦门市，多云，13摄氏度，东风，风力3级, 湿度67%' name='get_weather' id='aa09cb1b-4bca-4fdb-afde-a920b72df52a' tool_call_id='783b6452-a78e-4d5b-8107-d9f88a008d1f'
+2026-02-07 16:49:00,395 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 16:49:00,395 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 中国 福建省 厦门市，多云，13摄氏度，东风，风力3级, 湿度67%
+2026-02-07 16:49:16,720 - Agent - DEBUG - agent.py:35 - content='(◕‿◕) 今天多云，13度，微风轻抚喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T08:49:16.7158741Z', 'done': True, 'done_reason': 'stop', 'total_duration': 16288868700, 'load_duration': 127057800, 'prompt_eval_count': 889, 'prompt_eval_duration': 37307900, 'eval_count': 1258, 'eval_duration': 15637436500, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c374a-4609-7d03-a972-b7e7b0ed3244-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 889, 'output_tokens': 1258, 'total_tokens': 2147}

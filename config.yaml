@@ -1,0 +1,24 @@
+lazy_loading:
+  chunk_size: 4096
+
+models:
+  chat_model: qwen3:4b
+  embedding_model: qwen3-embedding:4b
+  rag_summary: qwen3:4b
+
+prompts:
+  system_prompt: ./prompts/main_prompt.md
+  rag_summary_prompt: ./prompts/rag_summary_prompt.md
+
+vector_store:
+  collection_name: knowledge_base
+  persist_directory: ./knowledge
+  chunk_size: 128
+  chunk_overlap: 16
+  separators: ["\n\n", "\n", " ", "", "。", "，", ",", ".", "！", "？", "!", "?"]
+  k: 3
+  data: ./data
+  md5_file: ./data/md5.txt
+  allowed_types: ["pdf", "csv", "txt"]
+
+Debug: True
