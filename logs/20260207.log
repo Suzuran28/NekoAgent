@@ -182,3 +182,44 @@
 2026-02-07 18:06:47,349 - Rag - ERROR - update_knowledge.py:22 - 删除向量数据库文件 chroma.sqlite3 失败, 错误信息: cannot access local variable 'couter' where it is not associated with a value
 2026-02-07 18:06:47,349 - Rag - INFO - update_knowledge.py:24 - 清理完毕，共删除 0 个文件
 2026-02-07 18:06:47,349 - Rag - INFO - update_knowledge.py:40 - 成功删除所有已存在的知识
+2026-02-07 18:17:47,217 - Rag - INFO - update_knowledge.py:15 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:17:47,302 - Rag - INFO - update_knowledge.py:21 - 成功删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062
+2026-02-07 18:17:47,302 - Rag - ERROR - update_knowledge.py:24 - 删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062 失败, 错误信息: cannot access local variable 'couter' where it is not associated with a value
+2026-02-07 18:17:47,303 - Rag - INFO - update_knowledge.py:26 - 清理完毕，共删除 0 个文件
+2026-02-07 18:17:47,303 - Rag - INFO - update_knowledge.py:42 - 成功删除所有已存在的知识
+2026-02-07 18:18:46,233 - Rag - INFO - update_knowledge.py:15 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:18:46,241 - Rag - ERROR - update_knowledge.py:24 - 删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062 失败, 错误信息: [WinError 2] 系统找不到指定的文件。
+2026-02-07 18:18:46,242 - Rag - INFO - update_knowledge.py:26 - 清理完毕，共删除 0 个文件
+2026-02-07 18:18:46,242 - Rag - INFO - update_knowledge.py:42 - 成功删除所有已存在的知识
+2026-02-07 18:22:21,311 - Rag - INFO - update_knowledge.py:15 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:22:21,354 - Rag - INFO - update_knowledge.py:21 - 成功删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062
+2026-02-07 18:22:21,354 - Rag - ERROR - update_knowledge.py:24 - 删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062 失败, 错误信息: cannot access local variable 'couter' where it is not associated with a value
+2026-02-07 18:22:21,354 - Rag - INFO - update_knowledge.py:26 - 清理完毕，共删除 0 个文件
+2026-02-07 18:22:21,354 - Rag - INFO - update_knowledge.py:42 - 成功删除所有已存在的知识
+2026-02-07 18:24:48,612 - Rag - INFO - update_knowledge.py:15 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:24:48,912 - Rag - INFO - update_knowledge.py:21 - 成功删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062
+2026-02-07 18:24:48,912 - Rag - ERROR - update_knowledge.py:24 - 删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062 失败, 错误信息: cannot access local variable 'couter' where it is not associated with a value
+2026-02-07 18:24:48,912 - Rag - INFO - update_knowledge.py:26 - 清理完毕，共删除 0 个文件
+2026-02-07 18:24:48,912 - Rag - INFO - update_knowledge.py:42 - 成功删除所有已存在的知识
+2026-02-07 18:26:09,374 - Rag - INFO - update_knowledge.py:15 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:26:09,577 - Rag - INFO - update_knowledge.py:22 - 成功删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062
+2026-02-07 18:26:09,577 - Rag - ERROR - update_knowledge.py:25 - 删除向量数据库文件 ./knowledge\aecb6f74-87bd-4672-84af-1f1e9f924062 失败, 错误信息: cannot access local variable 'couter' where it is not associated with a value
+2026-02-07 18:26:09,578 - Rag - INFO - update_knowledge.py:27 - 清理完毕，共删除 0 个文件
+2026-02-07 18:26:09,578 - Rag - INFO - update_knowledge.py:43 - 成功删除所有已存在的知识
+2026-02-07 18:27:03,712 - Rag - INFO - update_knowledge.py:14 - 成功清空已保存的MD5文件 ./data/md5.txt
+2026-02-07 18:27:03,713 - Rag - INFO - update_knowledge.py:25 - 清理完毕，共删除 0 个文件
+2026-02-07 18:27:03,713 - Rag - INFO - update_knowledge.py:41 - 成功删除所有已存在的知识
+2026-02-07 18:28:13,383 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 18:28:13,682 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 18:28:13,682 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 18:28:13,684 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['./data\\md5.txt', './data\\颜文字大全.txt']
+2026-02-07 18:28:13,684 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\md5.txt 值为: d41d8cd98f00b204e9800998ecf8427e
+2026-02-07 18:28:13,685 - Utils - DEBUG - file.py:68 - [textLoader] lists: [Document(metadata={'source': './data\\md5.txt'}, page_content='')]
+2026-02-07 18:28:13,685 - Rag - INFO - vector_service.py:91 - 加载文件 ./data\md5.txt 成功, 共 0 条数据
+2026-02-07 18:28:13,685 - Rag - WARNING - vector_service.py:93 - 文件 ./data\md5.txt 无有效文本
+2026-02-07 18:28:13,686 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\颜文字大全.txt 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 18:28:13,686 - Utils - DEBUG - file.py:68 - [textLoader] lists: [Document(metadata={'source': './data\\颜文字大全.txt'}, page_content='开心，高兴：\n    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ\n\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ  \n\n害羞：\n    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  \n\n卖萌：\n    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤   \n\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ    \n\n')]
+2026-02-07 18:28:13,687 - Rag - INFO - vector_service.py:91 - 加载文件 ./data\颜文字大全.txt 成功, 共 4 条数据
+2026-02-07 18:28:16,892 - Rag - DEBUG - vector_service.py:56 - 已保存MD5文件, 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 18:28:16,892 - Rag - INFO - vector_service.py:97 - ./data\颜文字大全.txt成功存储到向量数据库
+2026-02-07 18:28:16,892 - Rag - INFO - update_knowledge.py:35 - 成功加载知识库

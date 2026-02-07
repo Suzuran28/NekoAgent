@@ -2,7 +2,6 @@ from rag.vector_service import VectorStoreService
 from utils.logger import get_logger
 from utils.config_ import config
 import logging
-import subprocess
 import os
 
 logger = get_logger("Rag", logging.INFO)
@@ -17,7 +16,7 @@ def clear_vector_store():
         for path in os.listdir(config["vector_store"]["persist_directory"]):
             try:
                 path = os.path.join(config["vector_store"]["persist_directory"], path)
-                subprocess.run(["rm", path])
+                os.remove(path)
                 logger.info(f"成功删除向量数据库文件 {path}")
                 couter += 1
             except Exception as e:
