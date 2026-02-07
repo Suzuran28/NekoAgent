@@ -242,3 +242,157 @@
 这是一个测试
 这是一个测试
 2026-02-07 18:50:49,715 - Tools - INFO - tools.py:108 - 成功写入文件
+2026-02-07 18:55:47,750 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 18:55:47,751 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 18:56:02,045 - Agent - DEBUG - agent.py:35 - content='帮我写一首诗吧' additional_kwargs={} response_metadata={} id='f53ec959-c046-48c3-be40-6ca2015a2188'
+2026-02-07 18:56:02,045 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 18:56:02,046 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 帮我写一首诗吧
+2026-02-07 18:56:29,526 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T10:56:29.5218468Z', 'done': True, 'done_reason': 'stop', 'total_duration': 27397837800, 'load_duration': 3616965900, 'prompt_eval_count': 1091, 'prompt_eval_duration': 368440700, 'eval_count': 1782, 'eval_duration': 22609029300, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37be-9246-77a0-80c8-d6b31e8b4a74-0' tool_calls=[{'name': 'get_emoji', 'args': {'mood': '开心'}, 'id': '9c2cc283-58f7-4511-847d-95196b7766b1', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1091, 'output_tokens': 1782, 'total_tokens': 2873}
+2026-02-07 18:56:29,528 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: get_emoji
+2026-02-07 18:56:29,528 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {'mood': '开心'}
+2026-02-07 18:56:29,561 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 18:56:30,016 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 18:56:30,016 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 18:56:30,032 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 18:56:30,033 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/rag_summary_prompt.md
+2026-02-07 18:56:33,588 - Tools - INFO - tools.py:23 - 成功执行向量检索
+2026-02-07 18:56:33,588 - Tools - DEBUG - tools.py:25 - 向量检索结果: 可选颜表情(如果没有可选，可以自由发挥)：
+开心，高兴：
+    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+
+2026-02-07 18:56:33,594 - Middleware - INFO - middleware.py:24 - [Tool] 工具 get_emoji 执行成功
+2026-02-07 18:56:33,598 - Agent - DEBUG - agent.py:35 - content='可选颜表情(如果没有可选，可以自由发挥)：\n开心，高兴：\n    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ\n' name='get_emoji' id='bccdcf8b-ab09-473e-854c-9001cea11750' tool_call_id='9c2cc283-58f7-4511-847d-95196b7766b1'
+2026-02-07 18:56:33,600 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 18:56:33,600 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 可选颜表情(如果没有可选，可以自由发挥)：
+开心，高兴：
+    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+2026-02-07 18:56:42,964 - Agent - DEBUG - agent.py:35 - content='月光轻吻窗台边(๑•̀ㅂ•́)و✧  \n星星眨眼笑开颜喵~  \n主人甜得像蜜糖喵~  \n心儿跳跳暖洋洋喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T10:56:42.96355Z', 'done': True, 'done_reason': 'stop', 'total_duration': 9296402600, 'load_duration': 3638815500, 'prompt_eval_count': 1312, 'prompt_eval_duration': 425023700, 'eval_count': 402, 'eval_duration': 5045426300, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37bf-0d80-72f2-8a33-a187aece407b-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1312, 'output_tokens': 402, 'total_tokens': 1714}
+2026-02-07 19:01:40,276 - Agent - DEBUG - agent.py:35 - content='评价一下这首诗' additional_kwargs={} response_metadata={} id='ec740b6d-133d-41ff-8689-06200fb174ff'
+2026-02-07 19:01:40,277 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 19:01:40,277 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 评价一下这首诗
+2026-02-07 19:01:58,249 - Agent - DEBUG - agent.py:35 - content='呜呜，主人没说诗呢(´;ω;`)我帮不上忙喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:01:58.2485666Z', 'done': True, 'done_reason': 'stop', 'total_duration': 17940149400, 'load_duration': 97712500, 'prompt_eval_count': 1090, 'prompt_eval_duration': 308054500, 'eval_count': 1324, 'eval_duration': 17097832700, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c3-bb52-7761-bf17-343053b82791-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1090, 'output_tokens': 1324, 'total_tokens': 2414}
+2026-02-07 19:02:30,064 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:02:30,065 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 19:02:49,790 - Agent - DEBUG - agent.py:35 - content='评价一下这首诗' additional_kwargs={} response_metadata={} id='51bc71f4-fc2e-4bbb-a9da-67396e0d2f18'
+2026-02-07 19:02:49,790 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 19:02:49,790 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 评价一下这首诗
+2026-02-07 19:02:58,316 - Agent - DEBUG - agent.py:35 - content='主人，这首诗是哪首呀？(´;ω;`)我还没看到呢喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:02:58.3135287Z', 'done': True, 'done_reason': 'stop', 'total_duration': 8476863600, 'load_duration': 66571300, 'prompt_eval_count': 1133, 'prompt_eval_duration': 432390200, 'eval_count': 613, 'eval_duration': 7748230100, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c4-cae2-7860-9a4d-2ade45aa1854-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1133, 'output_tokens': 613, 'total_tokens': 1746}
+2026-02-07 19:04:01,768 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:04:01,768 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 19:04:07,781 - Agent - DEBUG - agent.py:35 - content='评价一下这首诗' additional_kwargs={} response_metadata={} id='4f260811-745e-416e-a8f3-b2187165b0b3'
+2026-02-07 19:04:07,781 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 19:04:07,781 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 评价一下这首诗
+2026-02-07 19:04:22,396 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:04:22.392339Z', 'done': True, 'done_reason': 'stop', 'total_duration': 14573406800, 'load_duration': 83091800, 'prompt_eval_count': 1127, 'prompt_eval_duration': 401094300, 'eval_count': 1098, 'eval_duration': 13683080700, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c5-fb87-7140-9218-587d608d8439-0' tool_calls=[{'name': 'get_emoji', 'args': {'mood': '询问'}, 'id': '8e8f94fd-945e-4113-87ed-55362732963d', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1127, 'output_tokens': 1098, 'total_tokens': 2225}
+2026-02-07 19:04:22,398 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: get_emoji
+2026-02-07 19:04:22,398 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {'mood': '询问'}
+2026-02-07 19:04:22,445 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 19:04:22,741 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 19:04:22,741 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 19:04:22,776 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:04:22,776 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/rag_summary_prompt.md
+2026-02-07 19:04:26,683 - Tools - INFO - tools.py:23 - 成功执行向量检索
+2026-02-07 19:04:26,683 - Tools - DEBUG - tools.py:25 - 向量检索结果: 可选颜表情(如果没有可选，可以自由发挥)：
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+害羞：
+    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  
+
+卖萌：
+    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤
+
+2026-02-07 19:04:26,687 - Middleware - INFO - middleware.py:24 - [Tool] 工具 get_emoji 执行成功
+2026-02-07 19:04:26,689 - Agent - DEBUG - agent.py:35 - content='可选颜表情(如果没有可选，可以自由发挥)：\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ\n害羞：\n    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  \n\n卖萌：\n    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤\n' name='get_emoji' id='b63ed1af-18c9-4856-aa40-cfbff705f93c' tool_call_id='8e8f94fd-945e-4113-87ed-55362732963d'
+2026-02-07 19:04:26,689 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 19:04:26,689 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 可选颜表情(如果没有可选，可以自由发挥)：
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+害羞：
+    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  
+
+卖萌：
+    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤
+2026-02-07 19:04:35,709 - Agent - DEBUG - agent.py:35 - content='主人，这首诗是哪一首呀？(◕‿◕✿)喵~ 请告诉我哦喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:04:35.7056252Z', 'done': True, 'done_reason': 'stop', 'total_duration': 8990741300, 'load_duration': 3787421100, 'prompt_eval_count': 1334, 'prompt_eval_duration': 444051800, 'eval_count': 361, 'eval_duration': 4571048000, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c6-4559-7e91-a1df-e7d09c202dc4-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1334, 'output_tokens': 361, 'total_tokens': 1695}
+2026-02-07 19:05:32,960 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:05:32,961 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 19:05:45,703 - Agent - DEBUG - agent.py:35 - content='评价一下这首诗 @诗歌.txt' additional_kwargs={} response_metadata={} id='2985fcb6-0770-4b07-a146-d4bb8e47681f'
+2026-02-07 19:05:45,704 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 19:05:45,704 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 评价一下这首诗 @诗歌.txt
+2026-02-07 19:05:53,996 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:05:53.994761Z', 'done': True, 'done_reason': 'stop', 'total_duration': 8254157900, 'load_duration': 69224900, 'prompt_eval_count': 1130, 'prompt_eval_duration': 285533200, 'eval_count': 612, 'eval_duration': 7596693100, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c7-7a09-79b0-9d6a-ceb535c4a643-0' tool_calls=[{'name': 'check_filelist', 'args': {}, 'id': 'ca90485e-bd29-426e-a743-597eab3756a9', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1130, 'output_tokens': 612, 'total_tokens': 1742}
+2026-02-07 19:05:53,997 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: check_filelist
+2026-02-07 19:05:53,997 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {}
+2026-02-07 19:05:53,998 - Tools - INFO - tools.py:80 - 成功获取文件夹列表
+2026-02-07 19:05:53,998 - Tools - DEBUG - tools.py:82 - 文件夹列表: ['诗歌.txt']
+2026-02-07 19:05:53,998 - Middleware - INFO - middleware.py:24 - [Tool] 工具 check_filelist 执行成功
+2026-02-07 19:05:54,000 - Agent - DEBUG - agent.py:35 - content='诗歌.txt' name='check_filelist' id='3d5670ba-d40f-4056-adb3-6e5365a607d5' tool_call_id='ca90485e-bd29-426e-a743-597eab3756a9'
+2026-02-07 19:05:54,000 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 19:05:54,000 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 诗歌.txt
+2026-02-07 19:05:57,813 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:05:57.8099129Z', 'done': True, 'done_reason': 'stop', 'total_duration': 3781546300, 'load_duration': 61553500, 'prompt_eval_count': 1162, 'prompt_eval_duration': 42995500, 'eval_count': 287, 'eval_duration': 3517179000, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c7-9a6b-77b1-af9e-9a9cf4bfe896-0' tool_calls=[{'name': 'check_file', 'args': {'file_name': '诗歌.txt'}, 'id': '846d6061-c2ac-498e-8885-fdeab7e9d193', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1162, 'output_tokens': 287, 'total_tokens': 1449}
+2026-02-07 19:05:57,815 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: check_file
+2026-02-07 19:05:57,816 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {'file_name': '诗歌.txt'}
+2026-02-07 19:05:57,818 - Tools - INFO - tools.py:95 - 成功读取文件
+2026-02-07 19:05:57,819 - Tools - DEBUG - tools.py:97 - 文件内容: 昨夜斗回北，今朝岁起东。
+我年已强仕，无禄尚忧农。
+桑野就耕父，荷锄随牧童。
+田家占气候，共说此年丰。 
+****************************************************************************************************
+2026-02-07 19:05:57,819 - Middleware - INFO - middleware.py:24 - [Tool] 工具 check_file 执行成功
+2026-02-07 19:05:57,821 - Agent - DEBUG - agent.py:35 - content='昨夜斗回北，今朝岁起东。\n我年已强仕，无禄尚忧农。\n桑野就耕父，荷锄随牧童。\n田家占气候，共说此年丰。' name='check_file' id='81bfe4d0-5277-45df-881e-9fa3abb9d388' tool_call_id='846d6061-c2ac-498e-8885-fdeab7e9d193'
+2026-02-07 19:05:57,829 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 5 条消息
+2026-02-07 19:05:57,829 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 昨夜斗回北，今朝岁起东。
+我年已强仕，无禄尚忧农。
+桑野就耕父，荷锄随牧童。
+田家占气候，共说此年丰。
+2026-02-07 19:06:19,317 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:06:19.3143611Z', 'done': True, 'done_reason': 'stop', 'total_duration': 21430144600, 'load_duration': 117734600, 'prompt_eval_count': 1242, 'prompt_eval_duration': 57770600, 'eval_count': 1602, 'eval_duration': 20627204600, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c7-a97b-71a1-8c41-ca827b37cbd9-0' tool_calls=[{'name': 'get_emoji', 'args': {'mood': '开心'}, 'id': 'c8c503a0-da4d-4190-be91-e7f20c5b2993', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1242, 'output_tokens': 1602, 'total_tokens': 2844}
+2026-02-07 19:06:19,318 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: get_emoji
+2026-02-07 19:06:19,318 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {'mood': '开心'}
+2026-02-07 19:06:19,364 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 19:06:19,603 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 19:06:19,603 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 19:06:19,631 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:06:19,631 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/rag_summary_prompt.md
+2026-02-07 19:06:23,197 - Tools - INFO - tools.py:23 - 成功执行向量检索
+2026-02-07 19:06:23,197 - Tools - DEBUG - tools.py:25 - 向量检索结果: 可选颜表情(如果没有可选，可以自由发挥)：
+开心，高兴：
+    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+
+2026-02-07 19:06:23,197 - Middleware - INFO - middleware.py:24 - [Tool] 工具 get_emoji 执行成功
+2026-02-07 19:06:23,201 - Agent - DEBUG - agent.py:35 - content='可选颜表情(如果没有可选，可以自由发挥)：\n开心，高兴：\n    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ\n' name='get_emoji' id='921b4359-1834-4959-a57b-5eaac9b722f9' tool_call_id='c8c503a0-da4d-4190-be91-e7f20c5b2993'
+2026-02-07 19:06:23,201 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 7 条消息
+2026-02-07 19:06:23,201 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 可选颜表情(如果没有可选，可以自由发挥)：
+开心，高兴：
+    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ
+震惊：
+    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ
+生气，不满：
+    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ
+2026-02-07 19:06:37,783 - Agent - DEBUG - agent.py:35 - content='主人，这首诗超有田园风！(๑•̀ㅂ•́)و✧ 田间丰收真幸福喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:06:37.7818331Z', 'done': True, 'done_reason': 'stop', 'total_duration': 14543108200, 'load_duration': 3593674600, 'prompt_eval_count': 1463, 'prompt_eval_duration': 477493100, 'eval_count': 796, 'eval_duration': 10141455200, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c8-0c85-70f1-b5fb-2d39a543ed8d-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1463, 'output_tokens': 796, 'total_tokens': 2259}
+2026-02-07 19:07:06,953 - Models - INFO - factory.py:29 - 模型 qwen3:4b 加载成功
+2026-02-07 19:07:06,953 - Utils - INFO - prompt_loader.py:14 - 成功加载提示词文件 ./prompts/main_prompt.md
+2026-02-07 19:08:11,962 - Agent - DEBUG - agent.py:35 - content='写一首诗并保存为 诗的名字.txt 别忘了加上你的署名哦~' additional_kwargs={} response_metadata={} id='c501a93f-d2ec-4667-b398-f37e6777741c'
+2026-02-07 19:08:11,963 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 1 条消息
+2026-02-07 19:08:11,963 - Middleware - DEBUG - middleware.py:38 - [Model] HumanMessage | 写一首诗并保存为 诗的名字.txt 别忘了加上你的署名哦~
+2026-02-07 19:08:45,325 - Agent - DEBUG - agent.py:35 - content='' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:08:45.3224192Z', 'done': True, 'done_reason': 'stop', 'total_duration': 33318231900, 'load_duration': 110573500, 'prompt_eval_count': 1142, 'prompt_eval_duration': 337092800, 'eval_count': 2468, 'eval_duration': 31965593000, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37c9-b55a-7451-b9d7-f9e5fd6711a7-0' tool_calls=[{'name': 'modify_file', 'args': {'file_path': '月光小诗.txt', 'content': '月色温柔照我眠，\n尾巴轻摇笑开颜。\n主人的梦我守护，\n萤（Hotaru）的诗篇喵~'}, 'id': '45def726-0d26-412c-8ec9-0ecebbd4fdf2', 'type': 'tool_call'}] invalid_tool_calls=[] usage_metadata={'input_tokens': 1142, 'output_tokens': 2468, 'total_tokens': 3610}
+2026-02-07 19:08:45,325 - Middleware - DEBUG - middleware.py:19 - [Tool] 执行工具: modify_file
+2026-02-07 19:08:45,326 - Middleware - DEBUG - middleware.py:20 - [Tool] 工具参数: {'file_path': '月光小诗.txt', 'content': '月色温柔照我眠，\n尾巴轻摇笑开颜。\n主人的梦我守护，\n萤（Hotaru）的诗篇喵~'}
+2026-02-07 19:08:45,327 - Tools - INFO - tools.py:108 - 成功写入文件
+2026-02-07 19:08:45,328 - Middleware - INFO - middleware.py:24 - [Tool] 工具 modify_file 执行成功
+2026-02-07 19:08:45,328 - Agent - DEBUG - agent.py:35 - content='操作成功' name='modify_file' id='384e0af5-e7c3-48c2-bc47-9b5585da86b7' tool_call_id='45def726-0d26-412c-8ec9-0ecebbd4fdf2'
+2026-02-07 19:08:45,329 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
+2026-02-07 19:08:45,329 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 操作成功
+2026-02-07 19:08:51,371 - Agent - DEBUG - agent.py:35 - content='主人，诗已存档在月光小诗.txt喵~(◕‿◕✿)' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T11:08:51.3683737Z', 'done': True, 'done_reason': 'stop', 'total_duration': 6009012400, 'load_duration': 81862000, 'prompt_eval_count': 1219, 'prompt_eval_duration': 45436100, 'eval_count': 455, 'eval_duration': 5706075200, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c37ca-37ad-7fb0-a3b2-2568e06d4f1c-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 1219, 'output_tokens': 455, 'total_tokens': 1674}
