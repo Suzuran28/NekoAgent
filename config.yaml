@@ -26,4 +26,7 @@ file:     # 工具调用文件相关
   inputs: ./inputs    # 存放用户输入目录
   chunk_size: 4096    # 懒加载的分块大小
 
+history:  # 短期记忆
+  type: None   # 可选的类型有：None(默认), InMemoryHistory
+
 Debug: True     # 是否开启调试模式
