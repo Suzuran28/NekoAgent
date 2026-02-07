@@ -4,7 +4,7 @@ from utils.config_ import config
 from utils.prompt_loader import load_prompt
 from utils.logger import get_logger
 from tools.tools import get_rag, get_weather, get_time, get_weather_by_city, get_emoji, check_file, check_filelist, modify_file
-from tools.middleware import monitor_tool_call, monitor_model
+from tools.middleware import monitor_tool_call, monitor_model, get_summarization_middleware
 from langgraph.checkpoint.memory import InMemorySaver
 
 logger = get_logger("Agent")
@@ -15,7 +15,7 @@ class ReactAgent:
         self.agent = create_agent(
             model= OllamaChatModel().generator(config["models"]["chat_model"]),
             tools= [get_rag, get_time, get_weather, get_weather_by_city, get_emoji, check_file, check_filelist, modify_file],
-            middleware= [monitor_tool_call, monitor_model],
+            middleware= [monitor_tool_call, monitor_model, get_summarization_middleware()],
             checkpointer= checkpoint,
             system_prompt= load_prompt(config["prompts"]["system_prompt"]),
         )

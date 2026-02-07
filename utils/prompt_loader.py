@@ -6,6 +6,8 @@ logger = get_logger("Utils")
 
 def load_prompt(prompt_file: str):
     prompt = ""
+    if prompt_file == "None":
+        return prompt
     try:
         chunk_size = config["lazy_loading"]["chunk_size"]
         with open(prompt_file, "r", encoding= "utf-8") as f:
