@@ -1,29 +1,29 @@
-lazy_loading:
-  chunk_size: 4096
+lazy_loading:         # 文档懒加载配置相关
+  chunk_size: 4096    # 懒加载的分块大小
 
-models:
-  chat_model: qwen3:4b
-  embedding_model: qwen3-embedding:4b
-  rag_summary: qwen3:4b
+models:               # 模型配置相关
+  chat_model: qwen3:4b          # 聊天模型
+  embedding_model: qwen3-embedding:4b     # 嵌入模型
+  rag_summary: qwen3:4b       # 摘要模型
 
-prompts:
-  system_prompt: ./prompts/main_prompt.md
-  rag_summary_prompt: ./prompts/rag_summary_prompt.md
+prompts:          # 提示词相关
+  system_prompt: ./prompts/main_prompt.md     # 系统提示词
+  rag_summary_prompt: ./prompts/rag_summary_prompt.md   # 摘要提示词
 
-vector_store:
-  collection_name: knowledge_base
-  persist_directory: ./knowledge
-  chunk_size: 128
-  chunk_overlap: 16
-  separators: ["\n\n", "\n", " ", "", "。", "，", ",", ".", "！", "？", "!", "?"]
-  k: 3
-  data: ./data
-  md5_file: ./data/md5.txt
-  allowed_types: ["pdf", "csv", "txt"]
+vector_store:     # 向量数据库相关
+  collection_name: knowledge_base   # 向量数据库名称
+  persist_directory: ./knowledge    # 持久化保存目录
+  chunk_size: 128       # 文档分块大小
+  chunk_overlap: 16     # 文档分块重叠大小
+  separators: ["\n\n", "\n", " ", "", "。", "，", ",", ".", "！", "？", "!", "?"]   # 分隔符
+  k: 3    # 搜索数量
+  data: ./data    # 数据目录
+  md5_file: ./data/md5.txt    # md5保存位置
+  allowed_types: ["pdf", "csv", "txt"]    # 允许的文件类型
 
-file:
-  outputs: ./outputs
-  inputs: ./inputs
-  chunk_size: 4096
+file:     # 工具调用文件相关
+  outputs: ./outputs  # 存放模型输出目录
+  inputs: ./inputs    # 存放用户输入目录
+  chunk_size: 4096    # 懒加载的分块大小
 
-Debug: True
+Debug: True     # 是否开启调试模式
