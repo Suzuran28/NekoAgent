@@ -21,4 +21,9 @@ vector_store:
   md5_file: ./data/md5.txt
   allowed_types: ["pdf", "csv", "txt"]
 
+file:
+  outputs: ./outputs
+  inputs: ./inputs
+  chunk_size: 4096
+
 Debug: True

@@ -223,3 +223,22 @@
 2026-02-07 18:28:16,892 - Rag - DEBUG - vector_service.py:56 - 已保存MD5文件, 值为: d5f2539750db634141518da3c2439e3a
 2026-02-07 18:28:16,892 - Rag - INFO - vector_service.py:97 - ./data\颜文字大全.txt成功存储到向量数据库
 2026-02-07 18:28:16,892 - Rag - INFO - update_knowledge.py:35 - 成功加载知识库
+2026-02-07 18:40:20,806 - Tools - INFO - tools.py:80 - 成功获取文件夹列表
+2026-02-07 18:40:20,806 - Tools - DEBUG - tools.py:82 - 文件夹列表: []
+2026-02-07 18:41:10,948 - Tools - INFO - tools.py:80 - 成功获取文件夹列表
+2026-02-07 18:41:10,949 - Tools - DEBUG - tools.py:82 - 文件夹列表: ['测试文件.txt']
+2026-02-07 18:41:41,635 - Tools - INFO - tools.py:80 - 成功获取文件夹列表
+2026-02-07 18:41:41,635 - Tools - DEBUG - tools.py:82 - 文件夹列表: ['测试文件.txt', '测试文件2.txt']
+2026-02-07 18:46:02,402 - Tools - WARNING - tools.py:101 - 读取文件失败, 错误信息: [Errno 2] No such file or directory: '测试文件.txt'
+2026-02-07 18:47:03,571 - Tools - INFO - tools.py:96 - 成功读取文件
+2026-02-07 18:47:03,571 - Tools - DEBUG - tools.py:98 - 文件内容: 这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+这是一个测试
+2026-02-07 18:50:49,715 - Tools - INFO - tools.py:108 - 成功写入文件

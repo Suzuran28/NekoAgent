@@ -5,6 +5,7 @@ from utils.config_ import config
 from datetime import datetime
 import requests
 import json
+import os
 
 logger = get_logger("Tools")
 session = requests.Session()
@@ -50,7 +51,7 @@ def get_weather_by_city(city: str) -> str:
         return context
     except Exception as e:
         logger.error(f"获取天气信息失败, 错误信息: {str(e)}")
-        return "天气查询失败，请稍后再试"
+        return "天气查询失败"
 
 @tool(description= "直接获取天气，不需要传入参数，返回天气信息(str)")
 def get_weather() -> str:
@@ -66,8 +67,46 @@ def get_weather() -> str:
         
     except Exception as e:
         logger.error(f"获取天气信息失败, 错误信息: {str(e)}")
-        return "天气查询失败，请稍后再试"
+        return "天气查询失败"
 
 @tool(description= "获取时间，不需要传入参数，返回当前时间(str)")
 def get_time() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+@tool(description= "能够获取文件夹详情，不需要传入参数，返回文件夹详情(str)")
+def check_filelist() -> str:
+    try:
+        lists = os.listdir(config["file"]["inputs"])
+        logger.info(f"成功获取文件夹列表")
+        if config["Debug"]:
+            logger.debug(f"文件夹列表: {lists}")
+        return "\n".join(lists)
+    except Exception as e:
+        logger.error(f"获取文件夹列表失败, 错误信息: {str(e)}")
+        return "获取文件夹列表失败"
+    
+@tool(description= "能够读取文件内容，传入文件名称(包括后缀名，str)，返回文件内容(str)")
+def check_file(file_name: str) -> str:
+    try:
+        with open(os.path.join(config["file"]["inputs"], file_name), "r", encoding= "utf-8") as f:
+            context = ""
+            while chunk:= f.read(config["file"]["chunk_size"]):
+                context += chunk
+        logger.info(f"成功读取文件")
+        if config["Debug"]:
+            logger.debug(f"文件内容: {context} \n" + "*" * 100)
+        return context
+    except Exception as e:
+        logger.warning(f"读取文件失败, 错误信息: {str(e)}")
+        return f"读取文件失败，错误信息: {str(e)}"
+
+@tool(description= "能够写入和新建文件，传入文件名称(包括后缀名，str)，文件内容(str)，返回写入结果(str)")
+def modify_file(file_path: str, content: str) -> str:
+    try:
+        with open(os.path.join(config["file"]["outputs"], file_path), "w", encoding= "utf-8") as f:
+            f.write(content)
+        logger.info(f"成功写入文件")
+        return "操作成功"
+    except Exception as e:
+        logger.warning(f"写入文件失败, 错误信息: {str(e)}")
+        return f"操作失败，错误信息: {str(e)}"
