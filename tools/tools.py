@@ -14,13 +14,26 @@ session.headers.update(
     }
 )
 
+@tool(description= "从向量库中寻找合适的颜表情，传入想表达的心情(str)，返回颜表情(str)")
+def get_emoji(mood: str) -> str:
+    rag = RagSummaryService()
+    try:
+        response = rag.excute_for_emoji(mood)
+        logger.info(f"成功执行向量检索")
+        if config["Debug"]:
+            logger.debug(f"向量检索结果: {response}")
+        return response
+    except Exception as e:
+        logger.error(f"向量检索失败, 原因: {str(e)}")
+        raise e
+
 @tool(description= "从向量存储库中检索参考资料，传入问题(str)，返回总结过的参考资料(str)")
 def get_rag(query: str) -> str:
     rag = RagSummaryService()
     try:
         response = rag.excute(query)
         logger.info(f"成功执行向量检索")
-        if config["debug"]:
+        if config["Debug"]:
             logger.debug(f"向量检索结果: {response}")
         return response
     except Exception as e:

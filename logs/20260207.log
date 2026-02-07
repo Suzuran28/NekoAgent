@@ -49,3 +49,54 @@
 2026-02-07 16:49:00,395 - Middleware - INFO - middleware.py:35 - [Model] 开始执行模型 qwen3:4b, 带有 3 条消息
 2026-02-07 16:49:00,395 - Middleware - DEBUG - middleware.py:38 - [Model] ToolMessage | 中国 福建省 厦门市，多云，13摄氏度，东风，风力3级, 湿度67%
 2026-02-07 16:49:16,720 - Agent - DEBUG - agent.py:35 - content='(◕‿◕) 今天多云，13度，微风轻抚喵~' additional_kwargs={} response_metadata={'model': 'qwen3:4b', 'created_at': '2026-02-07T08:49:16.7158741Z', 'done': True, 'done_reason': 'stop', 'total_duration': 16288868700, 'load_duration': 127057800, 'prompt_eval_count': 889, 'prompt_eval_duration': 37307900, 'eval_count': 1258, 'eval_duration': 15637436500, 'logprobs': None, 'model_name': 'qwen3:4b', 'model_provider': 'ollama'} id='lc_run--019c374a-4609-7d03-a972-b7e7b0ed3244-0' tool_calls=[] invalid_tool_calls=[] usage_metadata={'input_tokens': 889, 'output_tokens': 1258, 'total_tokens': 2147}
+2026-02-07 17:10:19,180 - Rag - ERROR - vector_service.py:29 - RagService初始化失败, 原因: 'embed_model'
+2026-02-07 17:11:26,277 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:11:26,560 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:11:26,560 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:11:26,561 - Utils - ERROR - file.py:12 - 文件不存在: 颜文字大全.txt
+2026-02-07 17:11:26,561 - Rag - ERROR - vector_service.py:81 - 获取文件MD5失败
+2026-02-07 17:11:26,562 - Rag - INFO - update_knowledge.py:10 - 成功加载知识库
+2026-02-07 17:14:13,919 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:14:14,149 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:14:14,149 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:14:14,150 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['颜文字大全.txt']
+2026-02-07 17:14:14,150 - Utils - ERROR - file.py:12 - 文件不存在: 颜文字大全.txt
+2026-02-07 17:14:14,150 - Rag - ERROR - vector_service.py:81 - 获取文件MD5失败
+2026-02-07 17:14:14,151 - Rag - INFO - update_knowledge.py:10 - 成功加载知识库
+2026-02-07 17:16:04,283 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:16:04,500 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:16:04,501 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:16:04,501 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['./data\\颜文字大全.txt']
+2026-02-07 17:16:04,504 - Rag - ERROR - update_knowledge.py:12 - 加载知识库失败: 'lazy_load'
+2026-02-07 17:18:44,292 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:18:44,494 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:18:44,495 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:18:44,496 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['./data\\颜文字大全.txt']
+2026-02-07 17:18:44,497 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\颜文字大全.txt 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 17:18:44,499 - Rag - ERROR - vector_service.py:99 - 向量数据库存储文件 ./data\颜文字大全.txt 失败, 错误信息: 'debug'
+2026-02-07 17:18:44,499 - Rag - INFO - update_knowledge.py:10 - 成功加载知识库
+2026-02-07 17:24:07,861 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:24:08,123 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:24:08,123 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:24:08,124 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['./data\\md5.txt', './data\\颜文字大全.txt']
+2026-02-07 17:24:08,125 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\md5.txt 值为: d41d8cd98f00b204e9800998ecf8427e
+2026-02-07 17:24:08,133 - Utils - DEBUG - file.py:68 - [textLoader] lists: [Document(metadata={'source': './data\\md5.txt'}, page_content='')]
+2026-02-07 17:24:08,134 - Rag - INFO - vector_service.py:91 - 加载文件 ./data\md5.txt 成功, 共 0 条数据
+2026-02-07 17:24:08,134 - Rag - WARNING - vector_service.py:93 - 文件 ./data\md5.txt 无有效文本
+2026-02-07 17:24:08,135 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\颜文字大全.txt 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 17:24:08,138 - Utils - DEBUG - file.py:68 - [textLoader] lists: [Document(metadata={'source': './data\\颜文字大全.txt'}, page_content='开心，高兴：\n    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ\n\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ  \n\n害羞：\n    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  \n\n卖萌：\n    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤   \n\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ    \n\n')]
+2026-02-07 17:24:08,139 - Rag - INFO - vector_service.py:91 - 加载文件 ./data\颜文字大全.txt 成功, 共 4 条数据
+2026-02-07 17:24:11,773 - Rag - DEBUG - vector_service.py:56 - 已保存MD5文件, 值为: {md5}
+2026-02-07 17:24:11,773 - Rag - INFO - vector_service.py:97 - ./data\颜文字大全.txt成功存储到向量数据库
+2026-02-07 17:24:11,773 - Rag - INFO - update_knowledge.py:10 - 成功加载知识库
+2026-02-07 17:25:31,967 - Models - INFO - factory.py:19 - 模型 qwen3-embedding:4b 加载成功
+2026-02-07 17:25:32,300 - Rag - INFO - vector_service.py:20 - 成功加载向量数据库
+2026-02-07 17:25:32,300 - Rag - INFO - vector_service.py:27 - 成功加载文档切片器
+2026-02-07 17:25:32,300 - Utils - DEBUG - file.py:46 - [listdir_with_allowed] files: ['./data\\颜文字大全.txt']
+2026-02-07 17:25:32,301 - Utils - INFO - file.py:24 - 计算文件MD5成功: ./data\颜文字大全.txt 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 17:25:32,302 - Rag - DEBUG - vector_service.py:41 - 未发现已存在的MD5文件，已重新创建MD5文件
+2026-02-07 17:25:32,302 - Utils - DEBUG - file.py:68 - [textLoader] lists: [Document(metadata={'source': './data\\颜文字大全.txt'}, page_content='开心，高兴：\n    ヽ(=^･ω･^=)丿   (๑•̀ㅂ•́)و✧  o(*≧▽≦)ツ   ヽ(✿ﾟ▽ﾟ)ノ   ♪(^∇^*)    (≧∀≦)ゞ  (/≧▽≦)/  ✧(≖ ◡ ≖✿)  (⁎˃ᴗ˂⁎)     (≧∇≦)ﾉ\n\n生气，不满：\n    o(≧口≦)o    o(￣ヘ￣o＃)    (..•˘_˘•..) (ﾒ｀ﾛ´)/    (｀へ′) (｀へ´*)ノ  \n\n害羞：\n    (〃∀〃)     (｡>ㅅ<｡)    (*/ω＼*)    (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)     (⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄  \n\n卖萌：\n    (>▽<)   o(=•ェ•=)m  (◍•ᴗ•◍)❤   \n\n震惊：\n    Ｏ(≧口≦)Ｏ  (°ー°〃)    (○´･д･)ﾉ    \n\n')]
+2026-02-07 17:25:32,302 - Rag - INFO - vector_service.py:91 - 加载文件 ./data\颜文字大全.txt 成功, 共 4 条数据
+2026-02-07 17:25:32,865 - Rag - DEBUG - vector_service.py:56 - 已保存MD5文件, 值为: d5f2539750db634141518da3c2439e3a
+2026-02-07 17:25:32,865 - Rag - INFO - vector_service.py:97 - ./data\颜文字大全.txt成功存储到向量数据库
+2026-02-07 17:25:32,865 - Rag - INFO - update_knowledge.py:10 - 成功加载知识库

@@ -15,7 +15,7 @@ def get_file_md5_hex(file_path: str) -> str | None:
         logger.warning(f"不是文件: {file_path}")
         return None
     md5_obj = hashlib.md5()
-    chunk_size = config["lazy_load"]["chunk_size"]
+    chunk_size = config["lazy_loading"]["chunk_size"]
     try:
         with open(file_path, "rb") as f:
             while chunk := f.read(chunk_size):
@@ -40,7 +40,10 @@ def listdir_with_allowed(path: str, allowed_types: list[str]) -> list[str] | Non
     
     for file in os.listdir(path):
         if file.endswith(tuple(allowed_types)):
-            files.append(file)
+            files.append(os.path.join(path, file))
+            
+    if config["Debug"]:
+        logger.debug(f"[listdir_with_allowed] files: {files}")
     
     return files
 
@@ -50,7 +53,7 @@ def pdf_loader(file_path: str, pwd: str | None = None) -> list[Document]:
     for doc in PyPDFLoader(file_path= file_path, password= pwd).lazy_load():
         lists.append(doc)
     
-    if config["debug"]:
+    if config["Debug"]:
         logger.debug(f"[pdfLoader] lists: {lists}")   
     
     return lists
@@ -61,7 +64,7 @@ def txt_loader(file_path: str) -> list[Document]:
     for doc in TextLoader(file_path= file_path, encoding= "utf-8").lazy_load():
         lists.append(doc)
     
-    if config["debug"]:
+    if config["Debug"]:
         logger.debug(f"[textLoader] lists: {lists}")
     
     return lists
@@ -72,7 +75,7 @@ def csv_loader(file_path: str) -> list[Document]:
     for doc in CSVLoader(file_path= file_path, encoding= "utf-8").lazy_load():
         lists.append(doc)
     
-    if config["debug"]:
+    if config["Debug"]:
         logger.debug(f"[csvLoader] lists: {lists}")
     
     return lists

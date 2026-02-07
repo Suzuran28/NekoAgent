@@ -34,3 +34,12 @@ class RagSummaryService:
             "input": query,
             "context": context
         })
+        
+    def excute_for_emoji(self, query: str) -> str:
+        context_docs = self.retriever_docs(query)
+        context = "可选颜表情(如果没有可选，可以自由发挥)：\n"
+
+        for doc in context_docs:
+            context += f"{doc.page_content}\n"
+            
+        return context

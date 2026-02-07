@@ -14,7 +14,7 @@ class VectorStoreService:
         try:
             self.vector_store = Chroma(
                 collection_name= config["vector_store"]["collection_name"],
-                embedding_function= OllamaEmbedModel().generator(config["models"]["embed_model"]),
+                embedding_function= OllamaEmbedModel().generator(config["models"]["embedding_model"]),
                 persist_directory= config["vector_store"]["persist_directory"],
             )
             logger.info("成功加载向量数据库")
@@ -37,7 +37,7 @@ class VectorStoreService:
         def check_md5(md5: str) -> bool:
             if not os.path.exists(file):
                 open(file, "w", encoding= "utf-8")
-                if config["debug"]:
+                if config["Debug"]:
                     logger.debug("未发现已存在的MD5文件，已重新创建MD5文件")
                 return False
             
@@ -52,8 +52,8 @@ class VectorStoreService:
             try:
                 with open(file, "a", encoding= "utf-8") as f:
                     f.write(md5 + "\n")
-                if config["debug"]:
-                    logger.debug("已保存MD5文件, 值为: {md5}")
+                if config["Debug"]:
+                    logger.debug(f"已保存MD5文件, 值为: {md5}")
             except Exception as e:
                 logger.error(f"保存MD5文件失败, 值为: {md5}, 原因: {str(e)}")
                 
