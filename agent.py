@@ -3,7 +3,7 @@ from models.factory import OllamaChatModel
 from utils.config_ import config
 from utils.prompt_loader import load_prompt
 from utils.logger import get_logger
-from tools.tools import get_rag, get_weather, get_time, get_weather_by_city
+from tools.tools import get_rag, get_weather, get_time, get_weather_by_city, get_emoji
 from tools.middleware import monitor_tool_call, monitor_model
 
 logger = get_logger("Agent")
@@ -13,7 +13,7 @@ class ReactAgent:
         super().__init__()
         self.agent = create_agent(
             model= OllamaChatModel().generator(config["models"]["chat_model"]),
-            tools= [get_rag, get_time, get_weather, get_weather_by_city],
+            tools= [get_rag, get_time, get_weather, get_weather_by_city, get_emoji],
             middleware= [monitor_tool_call, monitor_model],
             checkpointer= None,
             system_prompt= load_prompt(config["prompts"]["system_prompt"]),

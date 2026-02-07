@@ -98,3 +98,5 @@ class VectorStoreService:
                     except Exception as e:
                         logger.error(f"向量数据库存储文件 {filepath} 失败, 错误信息: {str(e)}")
                         continue
+                    
+    
