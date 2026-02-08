@@ -1,2 +1,7 @@
 .vscode/
 *test*.*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log

@@ -6,6 +6,7 @@ from datetime import datetime
 import requests
 import json
 import os
+from utils.img import get_img_base64, get_description
 
 logger = get_logger("Tools")
 session = requests.Session()
@@ -110,3 +111,11 @@ def modify_file(file_path: str, content: str) -> str:
     except Exception as e:
         logger.warning(f"写入文件失败, 错误信息: {str(e)}")
         return f"操作失败，错误信息: {str(e)}"
+    
+@tool(description= "能够识别图片，传入图片名称(包括后缀名，str)或网址(str)，返回描述图片的内容(str)")
+def read_img(inputs: str):
+    img_base64 = get_img_base64(inputs)
+    if img_base64 is None:
+        return "获取图片base64失败，请检查输入是否正确"
+    response = get_description(img_base64)
+    return response
