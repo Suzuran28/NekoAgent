@@ -12,7 +12,7 @@ from utils.prompt_loader import load_prompt
 
 logger = get_logger("Utils")
 
-def get_img_base64(inputs: str) -> str | None:
+def get_img_base64(inputs: str) -> str:
     if inputs.startswith("http"):
         logger.info(f"正在从链接 {inputs} 获取图片的 base64 编码")
         try:
@@ -23,7 +23,7 @@ def get_img_base64(inputs: str) -> str | None:
             return img_base64
         except Exception as e:
             logger.error(f"获取图片的 base64 编码失败, 错误信息: {str(e)}")
-            return None
+            return str(e)
     else:
         try:
             with Image.open(inputs) as img:
@@ -38,7 +38,7 @@ def get_img_base64(inputs: str) -> str | None:
                 return img_base64
         except Exception as e:
             logger.error(f"获取图片的 base64 编码失败, 错误信息: {str(e)}")
-            return None
+            return str(e)
         
 def get_description(base64: str) -> str:
     model = OllamaChatModel().generator(config["models"]["vision_model"])

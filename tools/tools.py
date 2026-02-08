@@ -115,7 +115,7 @@ def modify_file(file_path: str, content: str) -> str:
 @tool(description= "能够识别图片，传入图片名称(包括后缀名，str)或网址(str)，返回描述图片的内容(str)")
 def read_img(inputs: str):
     img_base64 = get_img_base64(inputs)
-    if img_base64 is None:
-        return "获取图片base64失败，请检查输入是否正确"
+    if img_base64.startswith("["):
+        return img_base64
     response = get_description(img_base64)
     return response
