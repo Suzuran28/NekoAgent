@@ -11,6 +11,7 @@ from tools.middleware import monitor_tool_call, monitor_model, get_summarization
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.checkpoint.postgres import PostgresSaver
 from history.history import get_DB_URL
+from voice.voice import VoiceService
 
 logger = get_logger("Agent")
 
@@ -70,16 +71,28 @@ if __name__ == '__main__':
             agent = ReactAgent(checkpoint)
             
             while True:
+                context =""
                 inputs = input("> ")
                 if inputs == "exit":
                     break
                 for chunk in agent.excute_stream(inputs, session_config):
                     print(chunk, end= "", flush= True)
+                    context += chunk
+                if config["voice"]["voice_generate"]:
+                    voice_service = VoiceService()
+                    path = voice_service.excute(context)
+                    print(f"语音已生成: {path}")
     
     if config["history"]["type"] != "PostgresHistory":
         while True:
-                inputs = input("> ")
-                if inputs == "exit":
-                    break
-                for chunk in agent.excute_stream(inputs, session_config):
-                    print(chunk, end= "", flush= True)
+            context =""
+            inputs = input("> ")
+            if inputs == "exit":
+                break
+            for chunk in agent.excute_stream(inputs, session_config):
+                print(chunk, end= "", flush= True)
+                context += chunk
+            if config["voice"]["voice_generate"]:
+                voice_service = VoiceService()
+                path = voice_service.excute(context)
+                print(f"语音已生成: {path}")

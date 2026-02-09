@@ -13,6 +13,7 @@ prompts:          # 提示词相关
   rag_summary_prompt: ./prompts/rag_summary_prompt.md   # 摘要提示词
   history_summary_prompt: None        # 历史摘要提示词
   vision_description_prompt: ./prompts/vision_description_prompt.md    # 视觉描述提示词
+  translate4tts_prompt: ./prompts/translate4tts_prompt.md    # 翻译文本提示词(将中文转为日语便于语音生成)
 
 vector_store:     # 向量数据库相关
   collection_name: knowledge_base   # 向量数据库名称
@@ -42,5 +43,9 @@ postgres:     # PostgreSQL数据库相关，用于存储持久性短期记忆
   host: localhost
   db_name: postgres
   port: 5432
+
+voice:
+  voice_generate: False   # 是否开启语音生成功能
+# 此功能严重影响性能
 
 Debug: True     # 是否开启调试模式

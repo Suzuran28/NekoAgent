@@ -8,17 +8,26 @@ import re
 
 logger = get_logger("webUI")
 
-inputs = st.chat_input("在此键入...", accept_file= "multiple", file_type= ["png", "jpg", "jpeg"])
+inputs = st.chat_input("在此键入...", accept_file= "multiple", file_type= ["txt", "md", "png", "jpg", "jpeg"])
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
+    
+if "voice" not in st.session_state and config["voice"]["voice_generate"]:
+    from voice.voice import VoiceService
+    st.session_state["voice"] = VoiceService()
 
 for message in st.session_state["messages"]:
     msg = st.chat_message(message["role"])
     content = message["content"]
     img_files = re.findall(r"@'(.+?)'", content)
     msg.image(img_files, width= 200)
-    msg.write((re.sub(r"@'(.+?)'", "", content)).replace("文件：", ""))
+    voice_files = re.findall(r"Voice'(.+?)'", content)
+    content = re.sub(r"@'(.+?)'", "", content).replace("文件：", "")
+    content = re.sub(r"Voice'(.+?)'", "", content)
+    msg.write(content)
+    if voice_files:
+        msg.audio(voice_files[0])
 
 if "agent" not in st.session_state:
     if config["history"]["type"] == "None":
@@ -69,4 +78,13 @@ if inputs:
         for chunk in st.session_state["agent"].excute_stream(context, session_config):
             res_list.append(chunk)
             st.chat_message("assistant").write_stream(capture_stream(chunk))
-    st.session_state["messages"].append({"role": "assistant", "content": "".join(res_list)})        
+    
+    context = "".join(res_list)
+    
+    if config["voice"]["voice_generate"]:
+        with st.spinner("语音生成中..."):
+            path = st.session_state["voice"].excute(context)
+            st.audio(path)
+            context += f"Voice'{path}'"
+
+    st.session_state["messages"].append({"role": "assistant", "content": context})
