@@ -13,7 +13,7 @@
     ollama list
     ```
     
-- 接着需要安装所需要的库，请确保 `python >= 3.10`
+- 接着需要安装所需要的库，请确保 `python >= 3.13`
 
 ```python
 pip install -r requirements.txt
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 streamlit run web.py
 ```
 
-打开web界面，注意该web页面处于未完工状态，不支持 `PostgresHistory` 数据库记忆存储~~（主要是没做前端渲染）~~
+打开web界面，注意该web页面处于未完工状态，不支持 `PostgresHistory` 数据库记忆存储
 
 或者直接运行 `agent.py` 使用终端对话
 
